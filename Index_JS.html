@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT LEARNING</title>
+
+    <style>
+        .demo {
+            background-color: orange;
+            color: white;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="alert(Object.is(5, '5'))">Click it</button>
+    <input type="email" id="text">
+
+    <select name="" id="gender" onchange="genderChanged(this)">
+        <option value="">--Choose--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <p id="show_message" style="color: blue;"></p>
+
+    <div class="demo" onmouseout="normalBox(this)" onmouseover="changeBox(this)">Box 1</div>
+
+    <script>
+        function myFunction() {
+            let x = document.getElementById("text");
+            x.value = x.value.toLowerCase();
+        }
+        
+        function genderChanged(obj) {
+            var mes = document.getElementById("show_message");
+            var value = obj.value;
+            if (value === '') {
+                mes.innerHTML = "You have not selected";
+            }
+            else if (value === 'Male') {
+                mes.innerHTML = "You have choosed Male";
+            }
+            else if (value === 'Female') {
+                mes.innerHTML = "You have choosed Female";
+            }
+        }
+
+        function changeBox(obj) {
+            obj.style.width = "200px";
+            obj.style.height = "200px";
+        }
+        function normalBox(obj) {
+            obj.style.width = "300px";
+            obj.style.height = "300px";
+        }
+    </script>
+</body>
+</html>
